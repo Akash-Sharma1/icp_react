@@ -1,38 +1,90 @@
-.App {
-  text-align: center;
-}
-
 .App-logo {
-  height: 40vmin;
-  pointer-events: none;
+  height: 5vmin;
+  padding-left: 2%;
+  padding-right: 2%;
+  cursor: pointer;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.App-logo2 {
+  height: 3vmin;
+  cursor: pointer;
 }
-
-.App-header {
+.App {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  /* justify-content: center; */
   color: white;
+  padding: 2%;
 }
 
-.App-link {
+.link {
   color: #61dafb;
 }
+.selectbox{
+  margin-bottom: 1%;
+}
+#searchinput {
+  width: 400px;
+}
+#searchclear {
+  position: absolute;
+  right: 5px;
+  top: 0;
+  bottom: 0;
+  height: 14px;
+  margin: auto;
+  font-size: 14px;
+  cursor: pointer;
+  color: #ccc;
+}
+.mainbody{
+  background-color: #ffffff;
+  color: #282c34;
+  border-radius: 3px;
+  height: 100%;
+  padding: 1%;
+}
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+table{
+  width : 100%;
+}
+
+.leftside{
+  position: absolute;
+  left: 3%;
+}
+.rightside{
+  position: absolute;
+  right: 3%;
+}
+th{
+  text-align: center;
+}
+
+td{
+  text-align:center;
+}
+
+.expandInputboxes{
+  margin-left:2%;
+  width:80%;
+}
+.clickable:hover{
+  cursor:pointer;
+  background-color: #B39DB6;
+}
+.expandFULL{
+  width:80%;
+}
+.expandFULL100{
+  width:100%;
+  margin:0px 0px 0px 0px;
+}
+.onleft{
+  position:relative;
+  right:80%
+}
+.marginonTop{
+  margin-top:2%;
 }
