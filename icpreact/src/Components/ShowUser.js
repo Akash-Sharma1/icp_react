@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Redirect } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import SendRequest from './SendRequest';
 
@@ -8,12 +9,15 @@ export default class ShowUser extends Component {
     
         this.state = {
             user : {},
+            isdeleted: false,
             isloading: false
         }
     }
     
     deleteuser(){
-        
+        let RequestObj = new SendRequest()
+        RequestObj.Send(process.env.REACT_APP_ManageUsersAPI+this.state.user.id, 'DELETE')
+        .then(response => {alert("Delted"); this.setState({isdeleted : true})} )        
     }
 
     componentDidMount(){
@@ -24,6 +28,7 @@ export default class ShowUser extends Component {
     }
     
     render() {
+        if (this.state.isdeleted) return <Redirect to="/" />
         var loading_message = "Loading...please wait"
         if (this.state.isloading == false) {
             loading_message = "";

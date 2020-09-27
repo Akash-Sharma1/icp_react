@@ -17,7 +17,14 @@ export default class SendRequest {
         }
         return new Promise( (resolve, reject) => {     
             this.send_request(options)
-            .then(response => resolve(response) )
+            .then(response => {
+                if (response.status == 200 || response.status == 201 || response.status == 302)
+                    resolve(response)
+                else {
+                    alert(response);
+                    reject(response);
+                }
+             } )
             .catch(err => reject(err) );
         });
     }

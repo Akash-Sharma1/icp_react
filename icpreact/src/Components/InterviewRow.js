@@ -3,12 +3,6 @@ import { NavLink } from "react-router-dom";
 
 export default class InterviewRow extends Component {
 
-    deleteInterview(){
-        
-    }
-    sendNotifications(){
-        
-    }
     render() {
         return (
             <tr className="mainbody ">
@@ -26,8 +20,8 @@ export default class InterviewRow extends Component {
                         )}
                     </select>
                 </td>
+                <td><NavLink to={"interviews/" + this.props.Interview.id + '/show' }>View Interview</NavLink></td>
                 <td><NavLink to={"interviews/" + this.props.Interview.id + "/edit"}>Edit Interview</NavLink></td>
-                <td><div className="clickable" onClick={() => { this.deleteInterview(); }}>Delete Interview</div></td>
                 <td><div className="clickable" onClick={() => { this.sendNotifications(); }}>Send notifications</div></td>
             </tr >
         )

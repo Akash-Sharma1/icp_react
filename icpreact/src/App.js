@@ -24,16 +24,16 @@ export default class App extends Component {
       <div>
         <HashRouter>
           <div className="content App">
-              <Route exact path="/" component={Interviews}/>
-              <Route exact path="/interviews" component={Interviews}/>
-              <Route exact path="/interviews/new" component={NewInterview}/>
-              <Route exact path="/interviews/:id" component={ShowInterview}/>
               <Route exact path="/interviews/:id/edit" component={EditInterview}/>
+              <Route exact path="/interviews/:id/show" component={ShowInterview}/>
+              <Route exact path="/interviews/new" component={NewInterview}/>
+              <Route exact path="/interviews" component={Interviews}/>
+              <Route exact path="/" component={Interviews}/>
               
-              <Route exact path="/users" component={Users}/>
-              <Route exact path="/users/new" component={NewUser}/>
-              <Route exact path="/users/:id" component={ShowUser}/>
               <Route exact path="/users/:id/edit" component={EditUser}/>
+              <Route exact path="/users/:id/show" component={ShowUser}/>
+              <Route exact path="/users/new" component={NewUser}/>
+              <Route exact path="/users" component={Users}/>
           </div>
         </HashRouter>
       </div>

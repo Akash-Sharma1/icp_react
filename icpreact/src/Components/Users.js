@@ -44,8 +44,8 @@ export default class Users extends Component {
                             <th>Username</th>
                             <th>Email</th>
                             <th>Resume link</th>
+                            <th>Show User</th>
                             <th>Want to edit?</th>
-                            <th>Delete?</th>
                         </tr>
                     </thead>
                     <tbody>

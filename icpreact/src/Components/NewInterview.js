@@ -9,10 +9,12 @@ export default class NewInterview extends Component {
     constructor(props) {
         super(props)
         this.addInterview = this.addInterview.bind(this);
+        this.state = {
+            isadded : false
+        }
     }
 
     addInterview(interviewData){
-        this.setState({isloading : true});
         let RequestObj = new SendRequest()
         RequestObj.Send(process.env.REACT_APP_ManageInterviewsAPI, 'POST', interviewData)
         .then(response => {alert("Added with id = "+response.data.id); this.setState({isadded : true})} )
@@ -22,7 +24,7 @@ export default class NewInterview extends Component {
         if (this.state.isadded) return <Redirect to="/" />
         return (
             <div>
-                <FormInterview addInterview = {this.addInterview} />
+                <FormInterview Interviewfunction = {this.addInterview} buttonsStatement = "Add Interview"/>
             </div>
         )
     }

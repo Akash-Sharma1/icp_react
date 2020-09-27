@@ -43,8 +43,8 @@ export default class Interviews extends Component {
                             <th>Start Time</th>
                             <th>End Time</th>
                             <th>Users</th>
+                            <th>Show interview</th>
                             <th>Want to edit?</th>
-                            <th>Delete?</th>
                             <th>Send Notification</th>
                         </tr>
                     </thead>

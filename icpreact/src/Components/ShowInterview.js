@@ -12,12 +12,16 @@ export default class ShowInterview extends Component {
         this.state = {
             interview : {users:[]},
             isloading: false,
+            isdeleted: false,
             erroroccured: false
         }
     }
     
+    
     deleteinterview(){
-        
+        let RequestObj = new SendRequest()
+        RequestObj.Send(process.env.REACT_APP_ManageInterviewsAPI+this.props.match.params.id, 'DELETE')
+        .then(response => {alert("Deleted"); this.setState({isdeleted : true})} )        
     }
 
     componentDidMount(){
@@ -29,11 +33,13 @@ export default class ShowInterview extends Component {
     }
     
     render() {
+        if (this.state.isdeleted) return <Redirect to="/" />
+        if (this.state.erroroccured) return <Redirect to="/" />
+
         var loading_message = "Loading...please wait"
         if (this.state.isloading == false) {
             loading_message = "";
         }
-        if (this.state.erroroccured) return <Redirect to="/" />
 
         return (
             <div className="mainbody ">
