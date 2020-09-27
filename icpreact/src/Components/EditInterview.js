@@ -5,7 +5,7 @@ import SendRequest from './SendRequest'
 
 import { Redirect } from "react-router-dom";
 
-export default class EditTinterview extends Component {
+export default class EditInterview extends Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -15,7 +15,6 @@ export default class EditTinterview extends Component {
     }
 
     editInterview(interviewData){
-        console.log(interviewData);
         let RequestObj = new SendRequest()
         RequestObj.Send(process.env.REACT_APP_ManageInterviewsAPI+this.props.match.params.id, 'PATCH', interviewData)
         .then(response => {alert("edit interview with id = "+response.data.id); this.setState({isedited : true})} )

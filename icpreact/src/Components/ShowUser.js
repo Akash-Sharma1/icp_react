@@ -17,7 +17,7 @@ export default class ShowUser extends Component {
     deleteuser(){
         let RequestObj = new SendRequest()
         RequestObj.Send(process.env.REACT_APP_ManageUsersAPI+this.state.user.id, 'DELETE')
-        .then(response => {alert("Delted"); this.setState({isdeleted : true})} )        
+        .then(response => {alert("Deleted"); this.setState({isdeleted : true})} )        
     }
 
     componentDidMount(){
@@ -28,7 +28,7 @@ export default class ShowUser extends Component {
     }
     
     render() {
-        if (this.state.isdeleted) return <Redirect to="/" />
+        if (this.state.isdeleted) return <Redirect to="/users" />
         var loading_message = "Loading...please wait"
         if (this.state.isloading == false) {
             loading_message = "";
